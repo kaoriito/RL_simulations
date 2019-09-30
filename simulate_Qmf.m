@@ -5,7 +5,7 @@
 %%
 
 totalTrials=201;
-alpha=1;
+alpha=0.5;
 beta=2;
 p=0.1;
 

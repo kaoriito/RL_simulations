@@ -4,13 +4,14 @@
 % alpha = 1, beta=2, p=0.1 gets nice bar plots for MF
 %%
 
+
 totalTrials=201;
 alpha=0.8;
 beta=2;
 p=0.1;
 
-reward_prob1=0.5;
-reward_prob2=0.5;
+reward_prob1=0.8;
+reward_prob2=0.2;
 
 %%
 commonProb=0.7;
@@ -82,11 +83,17 @@ while trial < totalTrials
     Qs2(s2)=Qs2(s2)+(alpha*(reward-Qs2(s2)));
     Qs2(3-s2)=Qs2(3-s2)*(1-alpha);
     
-    if s1Choice==1
-        Qmb(s1Choice)=(0.7*Qs2(1))+(0.3*Qs2(2));
+%     
+%     if s1Choice==1
+%         Qmb(s1Choice)=(0.7*Qs2(1))+(0.3*Qs2(2));
+%     else
+%         Qmb(s1Choice)=(0.3*Qs2(1))+(0.7*Qs2(2)); 
+%     end
     
+    if s2==1
+        Qmb(s2)=(0.7*Qs2(1))+(0.3*Qs2(2));
     else
-        Qmb(s1Choice)=(0.3*Qs2(1))+(0.7*Qs2(2)); 
+        Qmb(s2)=(0.3*Qs2(1))+(0.7*Qs2(2)); 
     end
   
     
@@ -163,6 +170,13 @@ while trial < totalTrials
     trial=trial+1;
     
 end
+% 
+% hist(dataSheet(:,5),20)
+% hist(dataSheet(:,7),20)
+% 
+% plot(dataSheet(:,1),dataSheet(:,10),dataSheet(:,1),dataSheet(:,11))
+
+
 
 % % 
 % plot(dataSheet(:,1),dataSheet(:,10),...

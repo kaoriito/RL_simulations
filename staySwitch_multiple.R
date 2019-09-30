@@ -1,7 +1,7 @@
 library(dplyr)
 library(ggplot2)
 
-subjID='mf_postmod'
+subjID='hybrid_postmod'
 iters=100;
 path2file='/Users/npnlusc/Documents/Projects/stroke_compensation/scripts/RL_simulations'
 
