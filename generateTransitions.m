@@ -26,10 +26,11 @@ function transMatrix = generateTransitions (numTrials, commonProb, minSet)
             if i==1 
                 % in the case of the first set, the first few (rampUp) will always be
                 % the common transition
-                rareIndex=randperm(20-rampUp,round(groupRare))+rampUp;
+                rareIndex=randperm(minSet-rampUp,round(groupRare))+rampUp;
             else 
-                rareIndex=randperm(20,round(groupRare));
+                rareIndex=randperm(minSet,round(groupRare));
             end
+
 
             consec=diff(sort(rareIndex));
 
@@ -38,10 +39,11 @@ function transMatrix = generateTransitions (numTrials, commonProb, minSet)
                 if i==1 
                     % in the case of the first set, the first few (rampUp) will always be
                     % the common transition
-                    rareIndex=randperm(20-rampUp,round(groupRare))+rampUp;
+                    rareIndex=randperm(minSet-rampUp,round(groupRare))+rampUp;
                 else 
-                    rareIndex=randperm(20,round(groupRare));
+                    rareIndex=randperm(minSet,round(groupRare));
                 end
+
 
                 consec=diff(sort(rareIndex));
 
